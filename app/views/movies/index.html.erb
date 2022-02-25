@@ -1,0 +1,7 @@
+<h1>Welcome to Sam's Watchlist </h1>
+<% @movies.each do |movie|%>
+<img src= <%=movie.poster_url%>>
+<p><%=movie.title%></p>
+<p><%=movie.overview%></p>
+<p><%=movie.rating%>/10</p>
+<%end%>
