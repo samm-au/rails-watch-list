@@ -1,5 +1,5 @@
 <div class="position-relative">
-  <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('list_background.jpg') %>)">
+  <div>
     <h1><%= @list.name %></h1>
   </div>
     <span class="movie-tag"><%= pluralize(@list.movies.size, 'movie') %></span>
@@ -38,19 +38,19 @@
   <div class="row">
     <div class="col-12 col-sm-6">
       <h3>Reviews</h3>
-      <% if @list.reviews.empty? %>
-        <small><em class="text-muted">Be the first one to review this list</em></small>
+      <%# <% if @list.reviews.empty? %>
+        <%# <small><em class="text-muted">Be the first one to review this list</em></small>
       <% end %>
-      <% @list.reviews.each do |review| %>
-        <div>
+      <%# <% @list.reviews.each do |review| %>
+        <%# <div>
           <% review.rating.times do %>
-            <i class="fas fa-star star-yellow"></i>
+            <%# <i class="fas fa-star star-yellow"></i>
           <% end %>
-          <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
-          <p class="mb-0"><%= review.comment %></p>
-        </div>
-        <hr>
-      <% end %>
+          <%# <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+          <%# <p class="mb-0"><%= review.comment</p> %>
+        <%# </div>
+        <hr> %>
+      <%# <% end %>
     </div>
     <div class="col-12 col-sm-6">
       <div class="bg-white rounded p-3">
@@ -65,4 +65,4 @@
   </div>
 </div>
 
-<%= render "bookmarks/new", list: @list %>
+<%# <%= render "bookmarks/new", list: @list %>
